@@ -100,7 +100,7 @@ body {
           <strong id="footerNavHeader">Helpful Links:</strong>
           <a href="https://github.com/shaal/DrupalPod" class="nav__link">DrupalPod</a>
           <a href="https://drupal.org/community/contributor-guide" class="nav__link">Contributor Guide</a>
-          <a href="https://drupal.org/project/issue/search/drupal" class="nav__link">Core Issue Queue</a>
+          <a href="https://drupal.org/project/issues/search/drupal" class="nav__link">Core Issue Queue</a>
           <a href="https://drupal.org/chat" class="nav__link">Chat With the Community</a>
         </nav>
       </footer>
