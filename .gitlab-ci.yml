@@ -1,0 +1,38 @@
+stages:
+  - vscode-extension-build
+  - vscode-extension-release
+
+cache:
+  paths:
+    - src/vscode-extension/drupalpod-ext/node_modules/
+
+vscode-extension-build:
+  image: node:lts-slim
+  stage: vscode-extension-build
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+  before_script:
+    - cd src/vscode-extension/drupalpod-ext
+  script:
+    - yarn install
+    # @todo run tests when "vscode-test" package works in GitPod, GitLab CI or
+    # GitHub Actions.
+    # - yarn test
+    - yarn package
+
+vscode-extension-release:
+  image: node:lts-slim
+  stage: vscode-extension-release
+  # @todo security hardening in project to prevent forks from releasing.
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+      when: never
+    - if: $CI_COMMIT_TAG
+  needs: ['vscode-extension-build']
+  before_script:
+    - cd src/vscode-extension/drupalpod-ext
+  script:
+    - yarn install
+    - npm run ovsx publish -p $OVSX_TOKEN
