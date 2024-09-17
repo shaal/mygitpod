@@ -1,6 +1,9 @@
 FROM gitpod/workspace-base as workspace-base
 SHELL ["/bin/bash", "-c"]
 
+# This makes the DDEV global configuration live in persistent /workspace/.config/ddev
+ENV XDG_CONFIG_HOME=/workspace/.config
+
 RUN sudo apt-get -qq update
 
 # Install dialog (interactive script)
