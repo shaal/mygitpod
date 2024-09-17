@@ -54,5 +54,10 @@
   "search.exclude": {
     "**/vendor": true,
   },
+  
+  // Fix terminal text display in Firefox
+  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.letterSpacing": 1,
+  
   "workbench.startupEditor": "none",
 }
