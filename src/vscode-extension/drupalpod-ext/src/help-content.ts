@@ -55,7 +55,7 @@ body {
               </ul>
             </li>
             <li><span class="emoji">⬅️</span> Press the “Explorer” button. You can access and modify files in Drupal core and contrib by going expanding the "repos" directory.</li>
-            <li><span class="emoji">⬅️</span> Press the “Remote Explorer” button. It shows the services provided by DrupalPod.
+            <li><span class="emoji">⬇️</span> Go to the “Ports” tab below (adjacent to the “Terminal” tab). It shows the services provided by DrupalPod.
               <ul>
                 <li>Find the “8080” item in the list.</li>
                 <li>Press the “Globe" button to open Drupal in a new tab or window.</li>
