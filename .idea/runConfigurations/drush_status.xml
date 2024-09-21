@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="drush status" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="/var/www/html/vendor/bin/drush" scriptParameters="status">
+    <CommandLine>
+      <PhpTestInterpreterSettings>
+        <option name="interpreterName" value="ddev-webserver-drupalpod" />
+      </PhpTestInterpreterSettings>
+    </CommandLine>
+    <method v="2" />
+  </configuration>
+</component>
