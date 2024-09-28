@@ -62,10 +62,7 @@ body {
                 <li>Press the “Open Preview” button to open Drupal in the Simple Browser as a panel in the editor.</li>
               </ul>
             </li>
-            <li><span class="emoji">⬇️</span> You can use the “Terminal” below to run git, ddev and drush. But first we need to setup SSH access if you have not done so already.
-              <ul>
-                <li>Run the following command in the Terminal: <code>.gitpod/drupal/ssh/00-interactive-ssh-setup.sh</code> and then follow the instructions in the tab that appears.</li>
-              </ul>
+            <li><span class="emoji">⬇️</span> You can use the “Terminal” below to run git, ddev and drush.
             </li>
           </ol>
         </section>
