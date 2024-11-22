@@ -89,6 +89,12 @@ if [ ! -f "${GITPOD_REPO_ROOT}"/.drupalpod_initiated ]; then
 
     # ddev config auto updates settings.php and generates settings.ddev.php
     ddev config --auto
+
+    # Set a default install profile if none was specified
+    if [ -z "$DP_INSTALL_PROFILE" ]; then
+        DP_INSTALL_PROFILE="minimal"
+    fi
+
     # New site install
     time ddev drush si -y --account-pass=admin --site-name="DrupalPod" "$DP_INSTALL_PROFILE"
 
