@@ -34,12 +34,12 @@ echo "$(cat composer.json | jq 'del(.conflict)' --indent 4)" >composer.json
 # If a core issue branch was chosen, we want the version of Drupal core that is in that issue branch
 # This is very helpful for issues that started with previous Drupal core versions, and the issue version automatically got updated to latest current drupal version
 if [ "$DP_PROJECT_TYPE" == "project_core" ] && [ -n "$DP_ISSUE_BRANCH" ]; then
-    time composer require drupal/core-recommended:* drupal/core-project-message:* drupal/core-composer-scaffold:* --no-update
+    time ddev composer require drupal/core-recommended:* drupal/core-project-message:* drupal/core-composer-scaffold:* --no-update
 fi
 
 # Only after composer update, /web/core get symlinked to /repos/drupal/core
 # repos/drupal/core -> web/core
-time composer update
+time ddev composer update
 
 # vendor -> repos/drupal/vendor
 if [ ! -L "$GITPOD_REPO_ROOT"/repos/drupal/vendor ]; then

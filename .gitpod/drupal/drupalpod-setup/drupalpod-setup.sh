@@ -85,7 +85,7 @@ if [ ! -f "${GITPOD_REPO_ROOT}"/.drupalpod_initiated ]; then
     time "${GITPOD_REPO_ROOT}"/.gitpod/drupal/install-essential-packages.sh
     # Configure phpcs for drupal.
     cd "$GITPOD_REPO_ROOT" &&
-        vendor/bin/phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer
+        ddev exec vendor/bin/phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer
 
     # ddev config auto updates settings.php and generates settings.ddev.php
     ddev config --auto
