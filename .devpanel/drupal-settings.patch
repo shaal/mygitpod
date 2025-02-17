@@ -1,0 +1,18 @@
+diff --git a/settings.php b/settings.php
+index cd364bb00df..493885f088b 100644
+--- a/settings.php
++++ b/settings.php
+@@ -854,6 +854,13 @@
+ # $settings['migrate_file_public_path'] = '';
+ # $settings['migrate_file_private_path'] = '';
+
++/**
++ * Load DevPanel override configuration, if available.
++ */
++if (getenv('DP_APP_ID') !== FALSE && file_exists(dirname($app_root) . '/.devpanel/settings.devpanel.php')) {
++  include dirname($app_root) . '/.devpanel/settings.devpanel.php';
++}
++
+ /**
+  * Load local development override configuration, if available.
+  *
